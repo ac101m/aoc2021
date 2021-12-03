@@ -2,3 +2,4 @@ rootProject.name = 'aoc2021'
 
 include 'util'
 include 'day01'
+include 'day02'
