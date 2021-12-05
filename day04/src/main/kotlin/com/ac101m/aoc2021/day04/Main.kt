@@ -123,7 +123,9 @@ fun parseBingoBoards(rawInput: String): List<BingoBoard> {
     }
 }
 
-fun computeWinningBoardScore(numbers: List<Int>, boards: List<BingoBoard>): Int {
+fun part1(rawInput: String): Any {
+    val numbers = parseNumberList(rawInput)
+    val boards = parseBingoBoards(rawInput)
     for (number in numbers) {
         for (bingoBoard in boards) {
             bingoBoard.callNumber(number)
@@ -132,15 +134,25 @@ fun computeWinningBoardScore(numbers: List<Int>, boards: List<BingoBoard>): Int 
             }
         }
     }
-    throw IllegalArgumentException("Board list contains no winning boards!")
-}
-
-fun part1(rawInput: String): Any {
-    val numbers = parseNumberList(rawInput)
-    val bingoBoards = parseBingoBoards(rawInput)
-    return computeWinningBoardScore(numbers, bingoBoards)
+    return "Board list contains no winning boards!"
 }
 
 fun part2(rawInput: String): Any {
-    return "not implemented!"
+    val numbers = parseNumberList(rawInput)
+    var bingoBoards = parseBingoBoards(rawInput)
+    var worstBoardScore = 0
+    while (bingoBoards.isNotEmpty()) {
+        for (number in numbers) {
+            println(number)
+            bingoBoards = bingoBoards.filterNot { board ->
+                board.callNumber(number)
+                val hasWon = board.hasWon()
+                if (bingoBoards.size == 1 && hasWon) {
+                    return bingoBoards[0].sumNotMatched() * number
+                }
+                hasWon
+            }
+        }
+    }
+    return "Error: Board list contains boards tied for last place!"
 }
