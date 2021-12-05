@@ -34,10 +34,10 @@ fun main(args: Array<String>) {
     println("Result: $result")
 }
 
-fun part1(input: String): Any {
+fun part1(rawInput: String): Any {
     return "not implemented!"
 }
 
-fun part2(input: String): Any {
+fun part2(rawInput: String): Any {
     return "not implemented!"
 }

@@ -60,12 +60,12 @@ fun movingAverage(depths: List<Int>): List<Int> {
     }
 }
 
-fun part1(input: String): Any {
-    val depths = intList(input)
+fun part1(rawInput: String): Any {
+    val depths = intList(rawInput)
     return countIncreases(depths)
 }
 
-fun part2(input: String): Any {
-    val depths = intList(input)
+fun part2(rawInput: String): Any {
+    val depths = intList(rawInput)
     return countIncreases(movingAverage(depths))
 }

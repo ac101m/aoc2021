@@ -87,17 +87,17 @@ class FixedSubmarine : Submarine() {
     }
 }
 
-fun part1(input: String): Any {
+fun part1(rawInput: String): Any {
     val submarine = Submarine()
-    for (instruction in parseInstructions(input)) {
+    for (instruction in parseInstructions(rawInput)) {
         submarine.executeInstruction(instruction)
     }
     return submarine.depth * submarine.displacement
 }
 
-fun part2(input: String): Any {
+fun part2(rawInput: String): Any {
     val submarine = FixedSubmarine()
-    for (instruction in parseInstructions(input)) {
+    for (instruction in parseInstructions(rawInput)) {
         submarine.executeInstruction(instruction)
     }
     return submarine.depth * submarine.displacement
