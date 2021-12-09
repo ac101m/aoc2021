@@ -3,7 +3,7 @@ package com.ac101m.aoc2021.day01
 import java.io.File
 
 fun printUsage() {
-    println("usage: day01 <part> <input>")
+    println("usage: dayXX <part> <input>")
 }
 
 fun getInputText(path: String): String {

@@ -4,7 +4,7 @@ import java.io.File
 import java.lang.IllegalArgumentException
 
 fun printUsage() {
-    println("usage: day01 <part> <input>")
+    println("usage: day03 <part> <input>")
 }
 
 fun getInputText(path: String): String {

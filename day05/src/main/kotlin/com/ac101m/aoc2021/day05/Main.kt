@@ -5,7 +5,7 @@ import java.lang.IllegalArgumentException
 import kotlin.math.abs
 
 fun printUsage() {
-    println("usage: day01 <part> <input>")
+    println("usage: day05 <part> <input>")
 }
 
 fun getInputText(path: String): String {
